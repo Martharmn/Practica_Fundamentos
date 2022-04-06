@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora fundamentos</title>
+    <body>
+    <center><h3>Calculadora básica</h3></center>
+    <form action="">
+        <table border="3" align="center">
+            <tr>
+                <td>
+                    Ingrese el número 1:
+                    <input type = "number" name = "m1" id = "m1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Ingrese el número 2:
+                    <input type = "number" name = "m2" id = "m2">
+                </td>
+            </tr>
+            <tr>
+                
+                <td>
+                    <center>Escribe el tipo de operacion: </center>
+                    <br>
+                    1.Suma
+                    <br>
+                    2.Resta
+                    <br>
+                    3.Multiplicación
+                    <br>
+                    4.División
+                    <input type = "number" name = "m3" id = "m3">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type = "button" value ="Calcular" onclick =Calcular2();>
+                </td>
+            </tr>
+        </table>
+    </form>
+   
+    <script>
+        
+        function calcular(v1,t,v2) 
+        {
+            let rescar = 0;
+            switch(t)
+            {
+                case 1 : return rescar = v1+v2;//Aquí usamos la tipo suma
+                case 2   :return  rescar = v1-v2;//Aquí usamos la tipo resta
+                case 3:return   rescar = v1*v2;//Aquí usamos la tipo multiplicación
+                case 4:return  rescar = v1/v2;//Aquí usamos la tipo división
+            }
+        }
+        function Calcular2()
+        {
+            let a = parseInt(document.getElementById("m1").value);
+            let b = parseInt(document.getElementById("m2").value);
+            let c = parseInt(document.getElementById("m3").value);
+            let d =  calcular(a,c,b);
+            return  alert("El valor es: "+d);
+
+        
+        }
+      
+
+  
+      
+        
+       
+
+
+    </script>
+    <center><h3>Formula Cuadrática</h3></center>
+    <form action="">
+        <table border="2" align="center">
+            <tr>
+                <td>
+                    Ingrese el valor a:
+                    <input type = "number" name = "c1" id = "c1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Ingrese el valor b:
+                    <input type = "number" name = "c2" id = "c2">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Ingrese el valor c:
+                    <input type = "number" name = "c3" id = "c3">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type = "button" value ="Calcular" onclick ="Cuadratica_Mart();">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        //
+    function Cuadratica_Mart() 
+    {
+        let a = parseInt(document.getElementById("c1").value);
+        let b = parseInt(document.getElementById("c2").value);
+        let c = parseInt(document.getElementById("c3").value);
+        let calc1 = (-1)*b;
+        let calc2 = Math.pow(b,2)-(4*a*c);
+        let calc3 = 2*a;
+        if (calc2 > 0) {
+            let x1 = (calc1 - Math.sqrt(calc2))/calc3;
+            let x2 = (calc1 + Math.sqrt(calc2))/calc3;
+            alert("Los  valores de x son: "+ parseFloat(x1) + " y " +parseFloat(x2));
+        } else {
+            let x3 = calc1/calc3;
+            alert("El valor de x es: "+ parseFloat(x3));
+        }
+    }
+    </script>
+
+
+    
+</body>
+</html> 
