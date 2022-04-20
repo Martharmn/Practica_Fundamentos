@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora consola</title>
+</head>
+<body>
+
+        <script>
+            let  op1 = 0;
+            let  op2 = 0;
+            let  op3 = 0;
+            let  op4 = 0;
+
+
+            VerC_();
+            function VerC_()
+            {
+                op1 = prompt('Que operacion va hacer.\n1.Suma\n2.Resta\n3.Multiplicacion\n5.Division','');
+                op2 =   prompt('Escribe el numero primario:','');
+                op3  =prompt('Escribe el numero secundario :','');
+                Result(op1);
+                op4 =prompt('Desea hacer otra operacion?\n S (Si) | N (No)','');
+                Obteneropc(op4);
+
+            }
+            function Result(t)
+            {
+                let m1 = parseInt(op1);
+                let m2 = parseInt(op2);
+                let m3 = parseInt(t);
+                let m4 =  operacion_(m1,m3,m2);
+                return  alert("Resultado de operacion: "+m4);
+            }
+            function Obteneropc(r)
+            {
+                    switch(r)
+                    {
+                        case 'S':
+                        {
+                            VerC_();
+                            
+            
+                        }
+                        case 'N':document.write('Gracias\nVuelva pronto ');
+                    }
+            }
+            function operacion_(dato,obt,datose) 
+            {
+                let rm = 0;
+                switch(obt)
+                {
+                    case 1: return rm = dato+datose;
+                    case 2:return  rm = dato-datose;
+                    case 3:return  rm = dato*datose;
+                    case 4:return  rm = dato/datose;
+    
+                }
+            }
+
+
+        </script>
+    
+</body>
+</html>
